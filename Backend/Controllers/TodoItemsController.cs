@@ -49,9 +49,8 @@ namespace Backend.Controllers
             return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, todoItem);
         }
 
-        // PUT: api/TodoItems/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(int id, TodoItem todoItem)
+        public async Task<ActionResult<TodoItem>> PutTodoItem(int id, TodoItem todoItem)
         {
             if (id != todoItem.Id)
             {
@@ -76,7 +75,15 @@ namespace Backend.Controllers
                 }
             }
 
-            return NoContent();
+            // Recupera el objeto actualizado de la base de datos
+            var updatedTodoItem = await _context.TodoItems.FindAsync(id);
+
+            if (updatedTodoItem == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(updatedTodoItem);
         }
 
         // DELETE: api/TodoItems/5

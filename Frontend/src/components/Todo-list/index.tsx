@@ -4,8 +4,9 @@ import './TodoList.css';
 
 export const TodoList = () => {
   const todos = useAppSelector(state => state.toDosReducer.toDos);
-  const handleChangeStatus = (id: number, checked: boolean) => {
-    console.log("se añadio" + id+ checked)
+  
+  const handleChangeStatus = () => {
+    window.location.reload();
   };
 
   return (

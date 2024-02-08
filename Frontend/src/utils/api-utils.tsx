@@ -32,3 +32,17 @@ export const postTodo = async (dispatch: AppDispatch, requestTodos: string, todo
 
   return fetchData(requestTodos, dispatch, options);
 };
+
+export const updateTodoStatus = async (dispatch: AppDispatch, requestUrl: string, id: number, isComplete: boolean, title: string ) => {
+  const url = `${requestUrl}/${id}`; 
+  const options: RequestInit = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ id: id,  title: title, isComplete: !isComplete }) 
+  };
+  console.log(JSON.stringify({ id: id,  title: title, isComplete: !isComplete }) )
+  console.log( "a la url " + `${requestUrl}/${id}`)
+  return fetchData(url, dispatch, options); 
+};
