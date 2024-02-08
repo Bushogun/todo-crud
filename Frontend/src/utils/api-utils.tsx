@@ -42,7 +42,6 @@ export const updateTodoStatus = async (dispatch: AppDispatch, requestUrl: string
     },
     body: JSON.stringify({ id: id,  title: title, isComplete: !isComplete }) 
   };
-  console.log(JSON.stringify({ id: id,  title: title, isComplete: !isComplete }) )
-  console.log( "a la url " + `${requestUrl}/${id}`)
   return fetchData(url, dispatch, options); 
 };
+

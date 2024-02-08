@@ -10,7 +10,7 @@ CREATE TABLE TodoItems (
 );
 
 
--- Insertar datos en la tabla TodoItems
+
 INSERT INTO TodoItems (Title,IsComplete)
 VALUES ('Comprar leche', 0);
 
