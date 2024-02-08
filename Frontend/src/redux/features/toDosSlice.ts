@@ -5,6 +5,9 @@ const toDosSlice = createSlice({
   name: "toDos",
   initialState: initialStateToDos,
   reducers: {
+    setSearchQuery: (state, action) => {
+      state.query = action.payload;
+    },
     setToDos: (state, action) => {
       state.toDos = action.payload;
     },
@@ -24,6 +27,7 @@ const toDosSlice = createSlice({
 });
 
 export const {
+  setSearchQuery,
   setToDos,
   setAddTask,
   setFilters,

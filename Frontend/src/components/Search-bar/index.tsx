@@ -1,16 +1,25 @@
-// import React, { ChangeEvent } from 'react';
+import React, { useState } from 'react';
 import { FiSearch } from "react-icons/fi";
-import './search-bar.css'
+import { useDispatch } from 'react-redux';
+import { setSearchQuery } from '../../redux/features/toDosSlice'; 
+import './search-bar.css';
 
-interface SearchBoxProps {
-    // query: string;
-    // setSearchQuery: (query: string) => void;
-}
+interface SearchBoxProps {}
 
-export const SearchBox: React.FC<SearchBoxProps> = ({ }) => {
+export const SearchBox: React.FC<SearchBoxProps> = () => {
+    const dispatch = useDispatch();
+    const [query, setQuery] = useState("");
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target;
+        setQuery(value);
+        dispatch(setSearchQuery(value)); 
+    };
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
     };
+
     return (
         <form
             aria-label="form-search"
@@ -24,8 +33,8 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ }) => {
                     className="form-control"
                     name="search"
                     placeholder="Search"
-                // value={query}
-                // onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
+                    value={query}
+                    onChange={handleChange}
                 />
             </div>
             <div className="input-group-append">
@@ -35,6 +44,4 @@ export const SearchBox: React.FC<SearchBoxProps> = ({ }) => {
             </div>
         </form>
     );
-}
-
-
+};
