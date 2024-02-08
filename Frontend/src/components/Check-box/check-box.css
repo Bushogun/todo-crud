@@ -1,0 +1,27 @@
+.checkbox-container {
+    margin: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-icon {
+
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    margin: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.checked .checkbox-icon {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+}

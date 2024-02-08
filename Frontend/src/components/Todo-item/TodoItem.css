@@ -1,0 +1,31 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+  
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+  
+.todo-item button {
+  font-size: 23px;
+  border: none;
+  padding: 0;
+  cursor: pointer; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  margin-left: 10px;
+  color: rgb(157, 60, 60);
+  background: transparent;
+}
+
+.todo-item button:hover {
+  color: rgb(234, 40, 40);
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: gray;
+}
