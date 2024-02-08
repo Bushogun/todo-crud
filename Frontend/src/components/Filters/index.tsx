@@ -41,7 +41,7 @@ export const Filters: React.FC = () => {
             <label htmlFor="category-active">Active</label>
             
             <input
-                value="COMPLETE"
+                value="COMPLETED"
                 name="category-radio"
                 id="category-complete"
                 type="radio"
