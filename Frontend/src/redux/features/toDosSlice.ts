@@ -36,3 +36,4 @@ export const {
 } = toDosSlice.actions;
 
 export default toDosSlice.reducer;
+
